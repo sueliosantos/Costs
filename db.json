@@ -1,37 +1,36 @@
 {
   "projects": [
     {
-      "name": "projeto teste",
-      "budget": "1500",
-      "categorias": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "costs": 0,
-      "services": [],
-      "id": 1
-    },
-    {
-      "name": "projeto teste 3",
-      "budget": "26800",
+      "name": "projeto 231",
+      "budget": "1503",
       "categorias": {
         "id": "1",
         "name": "Infra"
       },
-      "costs": 0,
-      "services": [],
-      "id": 5
+      "costs": null,
+      "services": [
+        {
+          "id": "d7960758-5ad8-46db-9724-c97e45e2de99"
+        },
+        {
+          "id": "8ab6488e-ed53-47b7-9cba-a4005fff89bb"
+        },
+        {
+          "id": "157ae7e5-2cee-4371-8c55-49aa87e19b0d"
+        }
+      ],
+      "id": 1
     },
     {
-      "name": "Projeto cartola",
-      "budget": "250",
+      "name": "projeto 2",
+      "budget": "3500",
       "categorias": {
-        "id": "2",
-        "name": "Desenvolvimento"
+        "id": "4",
+        "name": "Planejamento"
       },
       "costs": 0,
       "services": [],
-      "id": 6
+      "id": 2
     }
   ],
   "categories": [

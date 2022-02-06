@@ -8,6 +8,7 @@ import NewProject from './component/pages/NewProject';
 import Navbar from './component/layout/Navbar'
 import Footer from './component/layout/Footer';
 import Projects from './component/pages/Projects';
+import Project from './component/pages/Project';
 
  function App() {
   return (
@@ -34,6 +35,10 @@ import Projects from './component/pages/Projects';
 
           <Route  path="/projects">
             <Projects />
+          </Route>
+
+          <Route  path="/project/:id">
+            <Project />
           </Route>
 
         </Container>

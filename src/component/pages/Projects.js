@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react'
 function Projects(){
   const [projects, setProjects] = useState([])
   const [removeLoading, setRemoveLoading] = useState(false)
+  const [projectMessage, setProjectMessage] = useState('')
 
 
   const location = useLocation()
@@ -33,9 +34,22 @@ function Projects(){
       })
       .catch((err) => console.log(err))
     }, 300);
-    
-
   }, [])
+
+  function removeProject(id) {
+    fetch(`http://localhost:5000/projects/${id}`,{
+      method: 'DELETE',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+    }).then((resp) => resp.json())
+    .then(data => {
+      setProjects(projects.filter((project) => projects.id !== id))
+      setProjectMessage('Projeto removido com sucesso!')
+    })
+    .catch(err => console.log(err))
+  }
+
 
   return (
     <div className={styles.project_container}>
@@ -44,6 +58,7 @@ function Projects(){
         <LinkButton to="/newproject" text="Criar Projeto"/>
       </div>
       {message && <Message msg={message} type="success" />}
+      {projectMessage && <Message msg={projectMessage} type="success" />}
       
       <Container customClass="start">
        {projects.length > 0 && 
@@ -54,6 +69,7 @@ function Projects(){
               name={project.name}
               budget={project.budget}
               categorias={project.categorias.name}
+              handleRemove={removeProject}
             />
           ))}
 
